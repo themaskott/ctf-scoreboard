@@ -4,7 +4,8 @@ from scoreboard import db, create_app, models
 app=create_app()
 
 challs_names = ['level{0}'.format(_) for _ in range(20)]
-challs_flags = ['flag{0}'.format(_) for _ in range(20)]
+challs_flags_seed = ['flag{0}'.format(_) for _ in range(20)]
+challs_flags = ['CTF{{{0}}}'.format(hashlib.md5(_.encode()).hexdigest()) for _ in challs_flags_seed ]
 challs_points = [1] * 20
 
 with app.app_context():
