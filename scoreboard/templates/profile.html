@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<div class="column is-4 is-offset-4">
+  <h1 class="title">Player : {{ player.pseudo }}</h1>
+  <h2 class="subtitle">Score : {{ player.score }}</h2>
+
+  <div class="box">
+    <h2 class="subtitle">Validated challenges :</h2>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Challenge</th>
+          <th>Points</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for chall in player.challs %}
+        <tr>
+          <th>{{ chall.name }}</th>
+          <td>{{ chall.points }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

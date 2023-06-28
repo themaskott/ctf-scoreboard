@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+
+<div class="column is-4 is-offset-4">
+  <h3 class="title">Validate a challenge :</h3>
+  <div class="box">
+      {% with messages = get_flashed_messages(True,"error")[0] %}
+      {% if messages %}
+        <div class="notification is-danger">
+          {{ messages[1] }}
+        </div>
+      {% endif %}
+      {% endwith %}
+      {% with messages = get_flashed_messages(True,"info")[0] %}
+      {% if messages %}
+        <div class="notification is-success">
+          {{ messages[1] }}
+        </div>
+      {% endif %}
+      {% endwith %}
+
+
+
+      <form method="POST" action="/submit">
+
+        <div class="control">
+          <div class="select">
+            <select name="chall">
+              {% for chall in challs %}
+              <option value={{ chall.name }}>{{ chall.name }}</option>
+              {% endfor %}
+            </select>
+          </div>
+        </div>
+
+        <br>
+
+        <div class="field">
+          <div class="control">
+              <input class="input is-large" type="text" name="flag" placeholder="ESIEA{...}">
+          </div>
+        </div>
+        <button class="button is-block is-info is-large is-fullwidth">Submit</button>
+      </form>
+
+    </div>
+</div>
+
+
+
+
+{% endblock %}
