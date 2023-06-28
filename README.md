@@ -35,3 +35,17 @@ chmod +x launch.sh
 ```
 
 WARNING : `create_db.py` called by `launch.sh` will erase existing database in order to start a fresh instance.
+
+## SnapShots
+
+<p align="center">
+  <img src="img/capt1.png" />
+</p>
+
+<p align="center">
+  <img src="img/capt2.png" />
+</p>
+
+<p align="center">
+  <img src="img/capt3.png" />
+</p>
